@@ -1,10 +1,9 @@
 class Video < ActiveRecord::Base
   # attr_accessible :link
 
-  private
+#   before_create -> do
+#     # Our code here
+#   end
 
-    def video_params
-      params.require(:video).permit(:link)
-    end
 
 end

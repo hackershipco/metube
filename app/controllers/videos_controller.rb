@@ -7,7 +7,7 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.new(params[:video])
+    @video = Video.new(video_params)
     if @video.save
       flash[:success] = 'Video added!'
       redirect_to root_url
@@ -16,4 +16,10 @@ class VideosController < ApplicationController
     end
   end
 
+
+
+
+  def video_params
+    params.require(:video).permit(:link)
+  end
 end
