@@ -35,11 +35,11 @@ $(function() {
 
 
 _run = function() {
-  $('.preview').first().click();
+  $('.preview, .yt_preview').first().click();
 };
 
 google.setOnLoadCallback(_run);
 
-$('.preview').click(function() {
+$('.preview, .yt_preview').click(function() {
   return makeVideoPlayer($(this).data('uid'));
 });
