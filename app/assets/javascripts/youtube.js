@@ -1,5 +1,5 @@
+var _run, makeVideoPlayer
 $(function() {
-  var makeVideoPlayer;
   window.ytPlayerLoaded = false;
   makeVideoPlayer = function(video) {
     var player_wrapper;
@@ -18,6 +18,7 @@ $(function() {
         events: {
           'onReady': function() {
             return window.ytPlayerLoaded = true;
+            window.ytplayer.playVideo();
           },
           'onError': function(errorCode) {
             return alert("We are sorry, but the following error occured: " + errorCode);
@@ -29,4 +30,16 @@ $(function() {
       window.ytplayer.pauseVideo();
     }
   };
+});
+
+
+
+_run = function() {
+  $('.preview').first().click();
+};
+
+google.setOnLoadCallback(_run);
+
+$('.preview').click(function() {
+  return makeVideoPlayer($(this).data('uid'));
 });
