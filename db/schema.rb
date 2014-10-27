@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026222717) do
+ActiveRecord::Schema.define(version: 20141027000344) do
 
   create_table "videos", force: true do |t|
     t.string   "link"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141026222717) do
     t.integer  "dislikes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid"
   end
 
 end
